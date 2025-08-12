@@ -1,7 +1,16 @@
-[![](./images/PedalinoMini486.png)](https://github.com/alf45tar/PedalinoMini-6)
 
 
-# PedalinoMini™
+# PedalinoLibre
+
+## Note
+
+This is a fork of [PedalinoMini™](https://github.com/alf45tar/PedalinoMini). The new project name is intended to acknowledge the enormous contribution to open source MIDI hardware and software made by [Alf45tar](https://github.com/alf45tar), the main contributor to the PedalinoMini project, and its predecessor [Pedalino](https://github.com/alf45tar/Pedalino), with nearly 1300 commits across both repositories at the time of writing.
+
+As of v4.0.0 (released in July 2025), the  PedalinoMini firmware is no longer open source. This repository is intended to archive the last open source version of the PedalinoMini software.
+
+If you wish to see the latest developments in the PedalinoMini™ project, kindly go to its [Github page](https://github.com/alf45tar/PedalinoMini) now.
+
+## Overview
 
 Wireless MIDI foot controller for guitarists and more.
 
@@ -48,225 +57,6 @@ You can change the presets of your guitar rig, turn old MIDI equipment into some
 - Smart Config technology to help users connect to a Wi-Fi network through simple app on a smartphone.
 - OTA (Over the Air) firmware update or via HTTP (<http://pedalino.local/update>)
 
-## PedalinoMini™ 4
-
-An easy way to create one is by building the [PedalinoMini™ 4](https://github.com/alf45tar/PedalinoMini-4). I aimed to keep it as simple as possible.
-
-[PedalinoMini™ 4](https://github.com/alf45tar/PedalinoMini-4) operates seamlessly with its 4 footswitches, featuring a big 1.9" color display equipped with WiFi, Bluetooth, and USB MIDI capabilities. It is powered through a USB-C port, using either a power adapter or, for enhanced convenience, a compact power bank, ensuring up to 6 hours of uninterrupted functionality.
-
-[![](https://github.com/alf45tar/PedalinoMini-4/blob/main/images/PedalinoMini%204.jpg)](https://github.com/alf45tar/PedalinoMini-4)
-
-## PedalinoMini™ 6/8
-
-Do you need more footswitches? [PedalinoMini™ 6](https://github.com/alf45tar/PedalinoMini-6) or [PedalinoMini™ 8](https://github.com/alf45tar/PedalinoMini-8) is for you.
-
-[![](https://github.com/alf45tar/PedalinoMini-8/blob/fde349a01218d866c310c22895a28c323da8b707/images/PedalinoMini%208%20Naked.jpg)](https://github.com/alf45tar/PedalinoMini-8)
-
-## Sponsors
-
-New features, bug corrections, priority reply will be offered at zero-day to **sponsors only**. Sponsors will have access to a private repository.
-
-New features and bug corrections will be released to this public repository when one of the following goals is met (whichever come first):
-
-- **One thousand stars**
-
-  _Add a star to the project if you don't want be a sponsor._
-
-  >Goal is 1000 stars.
-
-- **12 months from October 25th, 2024**
-
-  _Be patience if you are not ready to add a star._
-
-  >Goal is reached on Ocotber 25th, 2025.
-
-When one of the previous goals will be reached sponsors will continue to receive in advance new versions and new goals will set.
-
-Sponsors version additions/fixes since October 25th, 2024:
-- None
-
-[PedalinoMini™ Case 1](https://github.com/alf45tar/PedalinoMini-Case-1) is available to sponsors only.
-
-## Public versions history
-
-<details>
-<summary>3.5.0 - October 25th, 2024 - Bonus release for 500 stars</summary>
-
-- Fixed simultaneous button press
-- Fixed reboot on configuration load
-- Fixed reboot on change profile via WebUI
-- Fixed bank 0 Program Change leds
-- Fixed LILYGO® T-Display-S3 display off on battery
-- Fixed LILYGO® T-Display-S3 leds strip and midi out pin overlap
-- Increased sequences to 20
-- Add support for ADS1115 16-bit analog-to-digital converter for 4 additional Analog pedals
-- Modified the voltage detection
-- Removed default credentials to connect to WebUI
-- Enabled PSRAM for LILYGO® T-Display-S3
-- Updated onboard Bootstrap to 5.3.3
-- Updated SorttableJS to 1.15.3
-- Updated to ArduinoJson v7
-- Updated to Adafruit TinyUSB Library version 3 (configuration description override)
-</details>
-
-<details>
-<summary>3.2.2 - February 3st, 2024</summary>
-
-- BPI Leaf S3 new pins assignment
-- ESPAsyncWebServer from esphome
-
-</details>
-
-<details>
-<summary>3.2.1 - February 1st, 2024</summary>
-
-- BPI Leaf S3 and LILYGO® T-Display-S3 USB MIDI device mode
-- LILYGO® T-Display-S3 display support
-- Fixed sequence led in configuration file
-- Added MIDI Channel "None" (do not send any message but recorded as last message sent to be used with Repeat Overwrite) and "All"
-- Fixed sequences loop when last slot is not empty
-- Fixed an error preventing AP mode with ESP32 S3
-- Added "MIDI Clock Master", "MIDI CLock Slave", "MIDI Clock Off", "Repeat", "Repeat Overwrite" to configuration file
-- Updated onboard Bootstrap to 5.3.2
-- Better battery voltage detection for BPI Leaf S3
-- Updated SortableJS to 1.15.2
-- Moved low priority tasks to Core 0
-- Added `lilygo-t-display` target board with Espressif 6.5.0
-</details>
-
-<details>
-<summary>3.1.6 - May 1st, 2023</summary>
-- Fixed power off action
-</details>
-
-<details>
-<summary>3.1.5 - April 30th, 2023</summary>
-
-The following features:
-
-- Bootstrap 5.2.2 onboard and latest via internet
-- SortableJS 1.15.0
-- Latest JSON Editor
-- Better buttons placement in WebUI
-- Fixed RGB order in cross led refresh
-- Fixed BLE boot mode disabled when disabled in Options
-- BLE client mode (define BLECLIENT in platformio.ini)
-- Redesign of Pedals logic with Controls
-- Simultaneous buttons press
-- Control Change Snap (thanks to potul)
-- OLED display bottom line fix (thanks to potul)
-- Tag name truncated fix
-- Led color on boot fix
-- Add Debounce Interval and Simultaneous Gap Time in Options
-- Press & Release event for streamline actions
-- Inactivity timeout switch off display and leds
-- Added Default as led option in Sequences
-- Added "Set Bank" action in Sequences
-- Added "Step by Step+" and "Step by Step-" to run sequence step by step forward and backward
-- Added latch emulation for momentary switches
-- Initial suppport for BPI Leaf S3 (no USB MIDI device/host)
-- Increased Controls to 100
-- Configuration file up to 256Kb when PSRAM is available
-- Configuration file can be appended to current profile (only Actions)
-- Switch profile (CC 00 [01-03] on channel 16) and bank (CC 32 [00-20] on channel 1&) via MIDI
-- MIDI Clock and MIDI Time Code (MTC) fixes and improvements
-
-has been released to public on April 30th, 2023. Thanks to the new sponsors: SrMorris, FelixMuellCode, MiqViq, serhatsoyyigit, potul, AndreySom, C*********, jimhiggs, A***********, Ratterbass, TarFilarek, S*********, bobvc133, itsptadeu, mosswind,,b*******, m*****, m*******, m********, TheNothingMan.
-</details>
-
-<details>
-<summary>2.5.2 - September 23rd, 2022</summary>
-
-Bonus version for doubling the stars on September 2nd, 2022.
-
-- RGB Order saved in NVS
-- Minor bug fixes
-</details>
-
-<details>
-<summary>2.5.1 - August 2nd, 2022</summary>
-
-The following features:
-
-- Fixed reboot on Options page with a long list of visible WiFi network
-- Fixed Note velocity always zero
-- Added display flip vertically on TTGO T-Display
-- Updated to latest JSON Editor 9.7.4
-- Added flip display and leds RGB order in Options
-- Fixed memory fragmentation during webpage creation
-- A new pedal type to connect an expression pedal and a switch (momentary or ladder) to one port only
-- Disabled WiFi power saving to reduce latency
-- Added OSC local port, remote host and remote port in Options
-- New "OSC Message" action sending integer and float values
-- Experimental: replace NVS with JSON files
-
-has been released to public on August 2nd, 2022 thanks to the following sponsors: b*******, basst22778, dbosnyak, d***********, slapukas, Samantha-uk, Poznik, FelixMuellCode, yusufrahadika and s*****.
-</details>
-
-<details>
-<summary>2.4.0 - February 26th, 2022</summary>
-
-The following features:
-
-- Installing firmware and WiFi provisioning directly from browser
-- Support for ultrasonic ranging module HC-SR04
-- Adjusting easing and threshold for analog and ultrasonic sensor
-- Fixed a bug that avoid to reach max value when analog calibration is on
-- Improved Pedals web UI
-- Fixed Program Change leds brightness
-- Link each button to a led in Pedals setup in order to streamline Actions definition
-
-has been released to public on February 26th, 2022. Thanks to the new sponsors: ClintR1984, pstechsolutions, mknerr, radioactivetoy, y0m1g, joesuspense, andeee, jsleroy, Viser, anssir, mattzzw.
-</details>
-
-<details>
-<summary>2.3.2 - November 12th, 2021</summary>
-
-  The following features:
-
-- Bootstrap 5.1.3
-- JSON Editor 9.5.6
-- Reduced debounce interval from 20ms to 5ms
-- Added "Set Led Color" action
-- Redesigned Sequences (new web UI, new configuration file) - EEPROM breaking change
-- Improved Actions web UI
-- Bank duplication
-
-has been released to public on November 12th, 2021. Thanks to the new sponsors: RomanKlein777, michaelhauser, bobvc133, bmarshall91, p*************.
-</details>
-
-<details>
-<summary>August 9th, 2021</summary>
-
-The following features/fixes:
-
-- Bootstrap 5.0.2
-- Fixed BOOT button actions in default configuration
-- Fixed compilation error when BATTERY flag defined for board without battery support
-- Fixed battery indicator for generic ESP32 board without battery support
-- Fixed TTGO T-Display glitches
-- Enable/disable incoming and outcoming MIDI messages display
-- Universal expression pedal
-- Fixed normal banks actions are not triggered when there are no actions in global bank
-- Fixed actions disappering on WebUI after profile switch
-- Drag & drop banks reorder
-- Current bank saved before profile switch (only via pedal)
-- Fixed Network MIDI/AppleMIDI/RTP-MIDI not working in AP mode
-- Leds effects
-
-has been released to public on August 9th, 2021 thanks to the following sponsors: richardjs, P********, j*****, TarFilarek. wespac001 x 2, DR-Mello, DWSQUIRES, e36910, itsptadeu.
-</details>
-
-<details>
-<summary>May 12th, 2021</summary>
-
-The following features:
-
-- Detection and actions triggered on REPEAT PRESSED and LONG RELEASE event
-- Latest Bootstrap 5 release and WebUI themes
-
-has been released to public on May 12th, 2021 thanks to the following sponsors: @MaxZak2020, @Alt Shift Creative, @serhatsoyyigit, @Kubbik1, @rigr, @jwyse, @teopost, @davidin73, @juani13973, @ba********, @MiqViq, @jisv48.
-</details>
 
 ## Bill of materials
 
@@ -318,27 +108,7 @@ Simulate "D1 Robot LCD Keypad Shield" voltage ladder
 
 ## How to upload firmware, WiFi provisioning and access to web user interface
 
-Visit http://alf45tar.github.io/PedalinoMini/installer to install *public* firmware, update firmware, connect device to a WiFi network and visit the device's hosted web interface.
-
-For sponsor only visit http://alf45tar.github.io/PedalinoMini/sponsor-installer to install *latest* firmware, update firmware, connect device to a WiFi network and visit the device's hosted web interface. It is required a secret key available on sponsor area.
-
-The only requirement for now is to use a Google Chrome or Microsoft Edge browser (Safari and iOS devices are not supported yet). WiFi provisioing via Bluetooth is only supported in Google Chrome on Windows.
-
-<details>
-<summary>Detailed instructions</summary>
-
-1. Connect PedalinoMini™ to a PC via USB
-2. Visit http://alf45tar.github.io/PedalinoMini/installer
-3. Select the latest firmware available
-4. Press "Connect"
-5. Select the USB/UART port where PedalinoMini™ is connected and press "Ok"
-6. Select "Install PedalinoMini™" and confirm to erase all data pressing "Install"
-7. Wait a couple of minutes to complete the installation and press "Next" at the end
-8. Reboot PedalinoMini™ and complete the WiFi provisioning
-9. Press "Connect to WiFi"
-10. Enter the Network Name and the Password of your WiFi and press "Connect"
-11. Press "Visit device" to access web user interface
-</details>
+Details to follow.
 
 ## USB MIDI using Raspberry Pi Pico (RP2040)
 
@@ -381,16 +151,16 @@ IMPORTANT: ESP32 board and Arduino Pro Micro must share GND.
 
 ## Booting modes
 
-PedalinoMini™ has 8 booting modes:
+PedalinoLibre has 8 booting modes:
 
 Mode|Name|Description
 ----|----|-----------
-1|Normal|BLE and WiFi are enabled. PedalinoMini™ starts the WiFi procedure on boot (connect to last AP -> WiFi Provisioning -> SmartConfig -> WPS -> Access Point).<br>After boot PedalinoMini™ will wait for BLE-MIDI connection.
-2|Bluetooth Only|WiFi and Web UI are disabled.<br> PedalinoMini™ will wait for BLE-MIDI connection only.
-3|WiFi Only|PedalinoMini™ starts the WiFi procedure on boot (connect to last AP -> WiFi Provisioning -> SmartConfig -> WPS -> Access Point).<br>BLE is disabled.
-4|Access Point with Bluetooth|PedalinoMini™ skip the WiFi procedure on boot and create a WiFi Access Point.<br>PedalinoMini™ will wait for BLE-MIDI connection too.
-5|Access Point without Bluetooth|PedalinoMini™ skips the WiFi procedure on boot and create a WiFi Access Point.<br>BLE is disabled.
-6|Reset WiFi credentials|Forget the last connected access point.<br>On next boot PedalinoMini™ can be connected to a new AP.
+1|Normal|BLE and WiFi are enabled. PedalinoLibre starts the WiFi procedure on boot (connect to last AP -> WiFi Provisioning -> SmartConfig -> WPS -> Access Point).<br>After boot PedalinoLibre will wait for BLE-MIDI connection.
+2|Bluetooth Only|WiFi and Web UI are disabled.<br> PedalinoLibre will wait for BLE-MIDI connection only.
+3|WiFi Only|PedalinoLibre starts the WiFi procedure on boot (connect to last AP -> WiFi Provisioning -> SmartConfig -> WPS -> Access Point).<br>BLE is disabled.
+4|Access Point with Bluetooth|PedalinoLibre skip the WiFi procedure on boot and create a WiFi Access Point.<br>PedalinoLibre will wait for BLE-MIDI connection too.
+5|Access Point without Bluetooth|PedalinoLibre skips the WiFi procedure on boot and create a WiFi Access Point.<br>BLE is disabled.
+6|Reset WiFi credentials|Forget the last connected access point.<br>On next boot PedalinoLibre can be connected to a new AP.
 7|Ladder Config|Learn mode for your ladder pedal. Any resistors ladder (up to 6 buttons) can be calibrated just pressing footswitches in any sequence. During calibration press and hold the footswitch until the timeout expires (the upper bar reaches zero) and the measure is acquired with a value in the botton bar. After calibration footswitches are numbered depending of the corresponding analog value: lower value lower number. TC HELICON Switch-6 footswitch 1 correspond to button 6, footswitch 2 to button 5, and so on until footswitch 6 to button 1.<br>Configure at least one pedal as Ladder before to proceed with configuration.
 8|Reset to factory default|
 
@@ -401,7 +171,7 @@ The default boot mode is (1) Normal.
 To select a different mode:
 
 - Press and release EN button (POWER button on TTGO T-Eight) and immediately after press and hold BOOT button (CENTER button on TTGO T-Eight)
-- Follow the istructions on display. Keep it pressed until the progress bar reach the end to reset to factory default. If you release the button before the progress bar reach the end PedalinoMini™ will start in one of the supported boot mode.
+- Follow the istructions on display. Keep it pressed until the progress bar reach the end to reset to factory default. If you release the button before the progress bar reach the end PedalinoLibre will start in one of the supported boot mode.
 
 Mode|Name|USB-MIDI|Legacy MIDI|RTP-MIDI|ipMIDI|BLE MIDI|OSC|Web UI|OTA Firmware Update|HTTP Firmware Update
 :--:|----|:------:|:---------:|:------:|:----:|:------:|:-:|:----:|:-----------------:|:------------------:
@@ -417,7 +187,10 @@ Mode|Name|USB-MIDI|Legacy MIDI|RTP-MIDI|ipMIDI|BLE MIDI|OSC|Web UI|OTA Firmware 
 
 ## How to build and upload
 
-[PlatformIO](https://platformio.org) is the recommended IDE for PedalinoMini™ build and upload.
+[PlatformIO](https://platformio.org) is the recommended IDE for PedalinoLibre build and upload.
+
+Note: Not tested
+
 
 1. Install [PlatformIO IDE for VSCode](https://platformio.org/install/ide?install=vscode)
 2. Install Git
@@ -426,7 +199,7 @@ Mode|Name|USB-MIDI|Legacy MIDI|RTP-MIDI|ipMIDI|BLE MIDI|OSC|Web UI|OTA Firmware 
 3. In VSCode run the following commands:
     - from View->Command Palette (Ctrl+Shift+P)
         - Git: Clone
-        - You will be asked for the URL of the remote repository (<https://github.com/alf45tar/PedalinoMini>) and the parent directory under which to put the local repository.
+        - You will be asked for the URL of the remote repository (<hhttps://github.com/satfinder/PedalinoLibre>) and the parent directory under which to put the local repository.
     - under PlatformIO Project Tasks select your environment (i.e. env:esp32doit-devkit-v1)
         - Click "Build" under General
         - Click "Upload" under General
@@ -436,31 +209,34 @@ That's all folks.
 
 > Before any update save configuration, reset to factory default and reload configuration. EEPROM can change without any further advice.
 
-## How to connect PedalinoMini™ to a WiFi network
+## How to connect PedalinoLibre to a WiFi network
 
-PedalinoMini™ supports IEEE 802.11 b/g/n WiFi with WPA/WPA2 authentication (only 2.4 GHz).
+*This information relates to using the PedalinoMini software rather than PedalinoLibre - it will need to be modified to work with PedalinoLibre*
 
-PedalinoMini™ support 5 WiFi provisioning methods: 1 via USB, 1 via Bluetooth and 3 via WiFi.
 
-PedalinoMini™ is using [ESP Web Tools](https://esphome.github.io/esp-web-tools/) not only to install the firmware, via USB with a click of button right from you browser, but also to connect it to WiFi with the same simplicity via USB or Bluetooth.
+PedalinoLibre supports IEEE 802.11 b/g/n WiFi with WPA/WPA2 authentication (only 2.4 GHz).
 
-PedalinoMini™ also implements Wi-Fi Protected Setup (WPS) and Smart Config technology ([Espressif’s ESP-TOUCH protocol](https://www.espressif.com/en/products/software/esp-touch/overview)). WPS needs access to the WPS button on the WiFi router. Smart Config requires a smartphone with one the following apps:
+PedalinoLibre support 5 WiFi provisioning methods: 1 via USB, 1 via Bluetooth and 3 via WiFi.
+
+PedalinoLibre is using [ESP Web Tools](https://esphome.github.io/esp-web-tools/) not only to install the firmware, via USB with a click of button right from you browser, but also to connect it to WiFi with the same simplicity via USB or Bluetooth.
+
+PedalinoLibre also implements Wi-Fi Protected Setup (WPS) and Smart Config technology ([Espressif’s ESP-TOUCH protocol](https://www.espressif.com/en/products/software/esp-touch/overview)). WPS needs access to the WPS button on the WiFi router. Smart Config requires a smartphone with one the following apps:
 
 - [ESP8266 SmartConfig](https://play.google.com/store/apps/details?id=com.cmmakerclub.iot.esptouch) for Android
 - [Espressif Esptouch](https://itunes.apple.com/us/app/espressif-esptouch/id1071176700?mt=8) for iOS
 
-If the WiFi network is not available PedalinoMini™ will create an hotspot for you. Once connected to the PedalinoMini™ hotspot, you can use the web interface to set the SSID and password of an access point that you would like to connect to.
+If the WiFi network is not available PedalinoLibre will create an hotspot for you. Once connected to the PedalinoLibre hotspot, you can use the web interface to set the SSID and password of an access point that you would like to connect to.
 
-- On power on PedalinoMini™ will try to connect to the last know access point
+- On power on PedalinoLibre will try to connect to the last known access point
 - If it cannot connect to the last used access point within 15 seconds it enters into WiFi provisioning mode via USB or Bluetooth
 - Visit http://alf45tar.github.io/PedalinoMini/installer and follow the instructions
 - If provisioning is not finished within 60 seconds it enters into Smart Config mode (if compiled with -D SMARTCONFIG in platformio.ini)
 - Start one of the suggested apps to configure SSID and password
 - If it doesn't receive any SSID and password during the next 60 seconds it enters into WPS mode (if compiled with -D WPS in platformio.ini)
-- Press or press and hold (it depends by your router) the WPS button on your WiFi router __after__ PedalinoMini™ entered in WPS mode
+- Press or press and hold (it depends by your router) the WPS button on your WiFi router __after__ PedalinoLibre entered in WPS mode
 - If it doesn't receive any SSID and password during the next 60 seconds it switch to AP mode
-- In AP mode PedalinoMini™ create a WiFi network called 'Pedalino-XXXXXXXX' waiting connection from clients. The required password is XXXXXXXX (uppercase). XXXXXXXX is a variable string.
-- Reboot PedalinoMini™ to restart the procedure.
+- In AP mode PedalinoLibre create a WiFi network called 'Pedalino-XXXXXXXX' waiting connection from clients. The required password is XXXXXXXX (uppercase). XXXXXXXX is a variable string.
+- Reboot PedalinoLibre to restart the procedure.
 
 Any of the previous steps can be skipped pressing BOOT button.
 
@@ -481,7 +257,7 @@ void wifi_connect()
 
 ## How to connect to the web user intertace
 
-The responsive and mobile-first configuration web user interface is available on `http://device-name.local` address (the address is case insensitive). The device identification name is unique per device. Every device/board has a different device name. For example I am using `http://2ab267ac.local` to connect to my PedalinoMini™.
+The responsive and mobile-first configuration web user interface is available on `http://device-name.local` address (the address is case insensitive). The device identification name is unique per device. Every device/board has a different device name. For example I am using `http://2ab267ac.local` to connect to my PedalinoLibre.
 
 ![WEBUI HOME](./images/webui-home.png "Home")
 
@@ -493,7 +269,7 @@ There is no credentials to connect to web user interface. Device name and creden
 
 ## Pedals
 
-Once PedalinoMini™ is connected to a WiFI network and you are connected to the web user interface it is time to configure which pedal is connected to each of the 6 available ports. Pedal 7, 8 and 9 (if present) are the on board buttons and they are fully configurable.
+Once PedalinoLibre is connected to a WiFI network and you are connected to the web user interface it is time to configure which pedal is connected to each of the 6 available ports. Pedal 7, 8 and 9 (if present) are the on board buttons and they are fully configurable.
 
 ![WEBUI PEDALS](./images/webui-pedals.png "Pedals")
 
@@ -504,7 +280,7 @@ Invert Polarity|Normally open (NO) and normally closed (NC) momentary switches a
 Singles Press|Select Enable/Disable here to enable/disable PRESS, RELEASE and CLICK events.<br>CLICK event is detected after a PRESS followed by a RELEASE event on momentary switches and on PRESS and on RELEASE on latch switches.
 Double Press|Select Enable/Disable here to enable/disable DOUBLE CLICK events.<br>If double press is enabled CLICK event is postponed until double press timeout (by default 400ms).
 Long Press|Select Enable/Disable here to enable/disable LONG PRESS, REPEAT PRESSED and LONG RELEASE events.<br>LONG PRESS event is detected after a PRESS event with no RELEASE event within the long press timeout (by default 500ms).<br>After a LONG PRESS event a REPEAT PRESSED event is triggered every repeat press timeout (by default 1000ms) until the button is keep pressed.<br>After a LONG PRESS event the RELEASE event is replaced by a LONG RELEASE event.<br>Two sequences of events are possible: PRESS and RELEASE or PRESS, LONG PRESS, REPEAT PRESS (optional) and LONG RELEASE.
-Analog Calibration|Enable analog pedal continuous calibration. Min and Max values are managed by PedalinoMini™. After each power on cycle move the expression pedals to its full range and PedalinoMini™ will calibrate it. During the first full movement of the pedal MIDI events could be not precise because PedalinoMini™ is still learning the full range of the pedal.
+Analog Calibration|Enable analog pedal continuous calibration. Min and Max values are managed by PedalinoLibre. After each power on cycle move the expression pedals to its full range and PedalinoLibre will calibrate it. During the first full movement of the pedal MIDI events could be not precise because PedalinoLibre is still learning the full range of the pedal.
 Analog Response|Mapping between analog pedal movement and response. Accepted values: LINEAR (as is response), LOG (great acceleration but than flat), ANTILOG (start slow with a rapid increase).
 Min|In ANALOG mode minumum digital value (after analog-to-digital conversion) that can reach the connected expression pedal.<br>In ULTRASONIC mode the minimum distance (250 is around 2cm and it is not recommended to go below). Acceptable values are from 0 to 1023
 Max|In ANALOG mode maximum digital value (after analog-to-digital conversion) that can reach the connected expression pedal.<br>In ULTRASONIC mode the maximum distance (1023 is around 18cm and it is far enough for the application). Acceptable values are from 0 to 1023.
@@ -625,7 +401,7 @@ Routing between different interfaces is enabled between every IN enabled interfa
 
 ## Options
 
-PedalinoMini™ has a lot of options well documented in the Options page.
+PedalinoLibre has a lot of options well documented in the Options page.
 
 ![WEBUI OPTIONS 1](./images/webui-options1.png "Options 1")
 
@@ -633,27 +409,27 @@ PedalinoMini™ has a lot of options well documented in the Options page.
 
 ## Configurations
 
-The complete profile setup can be saved as configuration to be used later or just for backup reason in case of hardware failure. Configuration files can be downloaded and shared with others PedalinoMini™ users.
+The complete profile setup can be saved as configuration to be used later or just for backup reason in case of hardware failure. Configuration files can be downloaded and shared with others PedalinoLibre users.
 A complete configuration file editor is provided for advanced operations.
 
 ![WEBUI CONFIGURATIONS](./images/webui-configurations.png "Configurations")
 
-Some example configurations are provides. The default configuration for [PedalinoMini™ Case 1](https://github.com/alf45tar/PedalinoMini-Case-1) is available as 'case1'.
+Some example configurations are provided. 
 
 ### iRig BlueBoard
 
-PedalinoMini™ can emulate an [IK Multimedia iRig Blueboard](https://www.ikmultimedia.com/products/irigblueboard/) using 'blueboard' configuration. Midi Mode 1 is on bank 1 and Midi Mode 2 is on bank 2. PedalinoMini™ emulation works on any MIDI interface and not only "MIDI over Bluetooth" as the original iRig Blueboard.
+PedalinoLibre can emulate an [IK Multimedia iRig Blueboard](https://www.ikmultimedia.com/products/irigblueboard/) using 'blueboard' configuration. Midi Mode 1 is on bank 1 and Midi Mode 2 is on bank 2. PedalinoLibre emulation works on any MIDI interface and not only "MIDI over Bluetooth" as the original iRig Blueboard.
 
 ### Fender Mustang Amplifier
 
-PedalinoMini™ can control a Fender Mustang I/II/III/IV Amplifier via MIDI. Additional [software](https://github.com/alf45tar/mustang-midi-bridge-win) is required to translate MIDI messages to the proprietary USB protocol used by Fender Mustang amplifiers. The bonus configuration is called 'mustang' and works with 3 momentary switches and 3 jog wheels.
+PedalinoLibre can control a Fender Mustang I/II/III/IV Amplifier via MIDI. Additional [software](https://github.com/alf45tar/mustang-midi-bridge-win) is required to translate MIDI messages to the proprietary USB protocol used by Fender Mustang amplifiers. The bonus configuration is called 'mustang' and works with 3 momentary switches and 3 jog wheels.
 
 ## Display mode
 
 Where|What|Display|Description
 :---:|:--:|-------|:----------
 Bank Name|Empty|![](./images/oled-display1.gif)|If the current bank name is empty the current profile and the current bank is shown using a vintage 7 segment LED style. First digit is the profile, the others two are for bank.
-Bank Name|Any|![](./images/oled-display2.gif)|If current bank name is not empty the bank name is displayed within the 6 pedal names. PedalinoMini™ assumes the first action tag for the pedal as its pedal name. The bank name screen will switch every 4 seconds to display pedals current value if no event occurs.
+Bank Name|Any|![](./images/oled-display2.gif)|If current bank name is not empty the bank name is displayed within the 6 pedal names. PedalinoLibre assumes the first action tag for the pedal as its pedal name. The bank name screen will switch every 4 seconds to display pedals current value if no event occurs.
 Bank Name|:|![](./images/oled-display3.gif)|If the bank name start with colon (:) the bank name is always shown (if no event occurs).
 Bank Name|.|![](./images/oled-display4.gif)|If bank name start with point (.) the current values are shown and events update values in real time without any display switch.
 Bank Name|##||A double hashtag sign (##) in bank name is replaced with the bank number.
